@@ -1,0 +1,49 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const {
+  title = "ruuley — 法律を計算可能にする",
+  description = "JSON-IR と Validation Gate で、検証とトレースが標準の法令運用へ",
+  ogImage = "/og.png",
+  canonical = "/",
+} = Astro.props as {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+};
+const site = import.meta.env.SITE_URL || "https://ruuley.com";
+const cfToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN || "";
+---
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={`${site}${canonical}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={`${site}${canonical}`} />
+    <meta property="og:image" content={`${site}${ogImage}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    {cfToken && (
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{\"token\":\"${cfToken}\"}`}></script>
+    )}
+  </body>
+</html>

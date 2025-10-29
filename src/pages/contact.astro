@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
+---
+<BaseLayout title="お問い合わせ — ruuley" canonical="/contact">
+  <section class="container">
+    <h1>お問い合わせ</h1>
+    <form method="POST" action="/api/contact">
+      <label>
+        お名前
+        <input name="name" required />
+      </label>
+      <label>
+        メール
+        <input name="email" type="email" required />
+      </label>
+      <label>
+        内容
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <div class="cf-turnstile" data-sitekey={siteKey}></div>
+      <button class="button" type="submit">送信</button>
+    </form>
+  </section>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</BaseLayout>

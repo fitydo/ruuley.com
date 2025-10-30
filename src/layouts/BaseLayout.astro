@@ -59,6 +59,56 @@ const getAlternateUrls = () => {
   };
 };
 const alternates = getAlternateUrls();
+
+// Generate breadcrumb items
+const getBreadcrumbItems = () => {
+  const items = [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": isJa ? "ホーム" : "Home",
+      "item": `${site}${isJa ? '/ja/' : '/en/'}`
+    }
+  ];
+  
+  // Skip root paths
+  if (currentPath === '/' || currentPath === '/ja/' || currentPath === '/en/') {
+    return items;
+  }
+  
+  // Extract path segments
+  const segments = currentPath.split('/').filter(s => s && s !== 'ja' && s !== 'en');
+  
+  if (segments.length === 0) {
+    return items;
+  }
+  
+  // Map segments to names
+  const segmentNames: Record<string, { ja: string; en: string }> = {
+    'products': { ja: '製品', en: 'Products' },
+    'solutions': { ja: 'ソリューション', en: 'Solutions' },
+    'docs': { ja: 'ドキュメント', en: 'Documentation' },
+    'pricing': { ja: '価格', en: 'Pricing' },
+    'ai': { ja: 'AI Copilot', en: 'AI Copilot' },
+    'contact': { ja: 'お問い合わせ', en: 'Contact' }
+  };
+  
+  let breadcrumbPath = isJa ? '/ja/' : '/en/';
+  segments.forEach((segment, index) => {
+    breadcrumbPath += segment + (index < segments.length - 1 ? '/' : '/');
+    const names = segmentNames[segment] || { ja: segment, en: segment };
+    items.push({
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": isJa ? names.ja : names.en,
+      "item": `${site}${breadcrumbPath}`
+    });
+  });
+  
+  return items;
+};
+
+const breadcrumbItems = getBreadcrumbItems();
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -94,6 +144,14 @@ const alternates = getAlternateUrls();
           "contactType": "sales",
           "url": `${site}${isJa ? '/ja/contact' : '/en/contact'}`
         }]
+      })} />
+    )}
+    {/* Structured Data - Breadcrumb (all pages) */}
+    {breadcrumbItems.length > 1 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbItems
       })} />
     )}
     <link rel="preconnect" href="https://fonts.googleapis.com" />

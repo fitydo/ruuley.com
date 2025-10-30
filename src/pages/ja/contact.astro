@@ -2,7 +2,10 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
 ---
-<BaseLayout title="お問い合わせ — ruuley" canonical="/ja/contact">
+<BaseLayout 
+  title="お問い合わせ — ruuley" 
+  description="JSON-IR や Validation Gate についてご質問・ご相談がございましたら、お気軽にお問い合わせください。デモ予約も受け付けております。"
+  canonical="/ja/contact">
   <section class="container">
     <h1>お問い合わせ</h1>
     {new URL(Astro.url).searchParams.get("sent") === "1" && (

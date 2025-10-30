@@ -14,9 +14,12 @@ const {
 };
 const site = import.meta.env.SITE_URL || "https://ruuley.com";
 const cfToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN || "";
+const currentPath = Astro.url.pathname;
+const isJa = currentPath.startsWith('/ja') || (!currentPath.startsWith('/en') && currentPath !== '/');
+const lang = isJa ? 'ja' : 'en';
 ---
 <!DOCTYPE html>
-<html lang="ja">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

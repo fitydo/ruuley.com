@@ -1,0 +1,40 @@
+---
+const currentPath = Astro.url.pathname;
+const isJa = currentPath.startsWith('/ja') || (!currentPath.startsWith('/en') && currentPath !== '/');
+const otherLang = isJa ? 'en' : 'ja';
+let otherPath = isJa 
+  ? currentPath.replace('/ja', '/en')
+  : currentPath.replace('/en', '/ja');
+if (otherPath === currentPath) {
+  otherPath = otherLang === 'en' ? '/en' : '/ja';
+}
+const ariaLabel = otherLang === 'en' ? 'Switch to English' : '日本語に切り替え';
+---
+<div class="language-switcher">
+  <a href={otherPath} aria-label={ariaLabel} class="lang-link">
+    {otherLang === 'en' ? 'EN' : 'JA'}
+  </a>
+</div>
+<style>
+  .language-switcher {
+    display: flex;
+    align-items: center;
+  }
+  .lang-link {
+    color: var(--fg-secondary);
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .lang-link:hover {
+    color: var(--accent);
+    background: rgba(255,255,255,.05);
+  }
+</style>
+

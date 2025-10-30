@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
+---
+<BaseLayout title="Contact — ruuley" canonical="/en/contact">
+  <section class="container">
+    <h1>Contact</h1>
+    {new URL(Astro.url).searchParams.get("sent") === "1" && (
+      <div role="alert" aria-live="polite" style="background: #4ade80; color: #001525; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+        Thank you for your message. We'll get back to you soon.
+      </div>
+    )}
+    <form method="POST" action="/api/contact" id="contact-form" novalidate>
+      <label for="name">
+        Name
+        <input id="name" name="name" type="text" required aria-required="true" autocomplete="name" />
+      </label>
+      <label for="email">
+        Email
+        <input id="email" name="email" type="email" required aria-required="true" autocomplete="email" />
+      </label>
+      <label for="message">
+        Message
+        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+      </label>
+      {siteKey ? (
+        <>
+          <div class="cf-turnstile" data-sitekey={siteKey} data-theme="dark" data-callback="onTurnstileSuccess"></div>
+          <div id="turnstile-status" style="display: none; background: #ef4444; color: white; padding: 8px; border-radius: 4px; margin-top: 8px; font-size: 14px;">
+            Failed to load Turnstile widget. Please reload the page.
+          </div>
+        </>
+      ) : (
+        <div style="background: #ef4444; color: white; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+          Warning: Turnstile configuration is incomplete. Please contact the site administrator.
+        </div>
+      )}
+      <button class="button" type="submit" aria-label="Submit contact form">Send</button>
+    </form>
+  </section>
+  {siteKey && (
+    <script>
+      window.onTurnstileSuccess = function() {
+        const status = document.getElementById("turnstile-status");
+        if (status) status.style.display = "none";
+      };
+      
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const widget = document.querySelector(".cf-turnstile");
+          const tokenInput = document.querySelector("input[name='cf-turnstile-response']");
+          if (widget && !tokenInput) {
+            const status = document.getElementById("turnstile-status");
+            if (status) status.style.display = "block";
+          }
+        }, 3000);
+        
+        const form = document.getElementById("contact-form");
+        if (form) {
+          form.addEventListener("submit", (e) => {
+            const tokenInput = form.querySelector("input[name='cf-turnstile-response']") as HTMLInputElement;
+            if (!tokenInput || !tokenInput.value) {
+              e.preventDefault();
+              alert("Please complete Turnstile verification.");
+              return false;
+            }
+          });
+        }
+      });
+    </script>
+  )}
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</BaseLayout>
+

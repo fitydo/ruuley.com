@@ -1,25 +1,44 @@
 ---
-const nav = [
-  { href: "/", label: "ホーム" },
-  { href: "/products/", label: "製品" },
-  { href: "/solutions/", label: "ソリューション" },
-  { href: "/docs/", label: "ドキュメント" },
-  { href: "/pricing/", label: "価格" },
-  { href: "/ai/", label: "AI Copilot (β)" },
-  { href: "/contact", label: "お問い合わせ" },
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+const currentPath = Astro.url.pathname;
+const isJa = currentPath.startsWith('/ja') || (!currentPath.startsWith('/en') && currentPath !== '/');
+const langPrefix = isJa ? '/ja' : '/en';
+
+const nav = isJa ? [
+  { href: `${langPrefix}/`, label: "ホーム" },
+  { href: `${langPrefix}/products/`, label: "製品" },
+  { href: `${langPrefix}/solutions/`, label: "ソリューション" },
+  { href: `${langPrefix}/docs/`, label: "ドキュメント" },
+  { href: `${langPrefix}/pricing/`, label: "価格" },
+  { href: `${langPrefix}/ai/`, label: "AI Copilot (β)" },
+  { href: `${langPrefix}/contact`, label: "お問い合わせ" },
+] : [
+  { href: `${langPrefix}/`, label: "Home" },
+  { href: `${langPrefix}/products/`, label: "Products" },
+  { href: `${langPrefix}/solutions/`, label: "Solutions" },
+  { href: `${langPrefix}/docs/`, label: "Docs" },
+  { href: `${langPrefix}/pricing/`, label: "Pricing" },
+  { href: `${langPrefix}/ai/`, label: "AI Copilot (β)" },
+  { href: `${langPrefix}/contact`, label: "Contact" },
 ];
+
+const logoLabel = isJa ? "ruuley ホーム" : "ruuley Home";
+const menuLabel = isJa ? "メニューを開く" : "Open menu";
+const navLabel = isJa ? "メインナビゲーション" : "Main navigation";
 ---
 <header class="site-header">
   <div class="container">
-    <a class="logo" href="/" aria-label="ruuley ホーム">ruuley</a>
-    <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" id="menu-toggle">
+    <a class="logo" href={langPrefix + "/"} aria-label={logoLabel}>ruuley</a>
+    <button class="menu-toggle" aria-label={menuLabel} aria-expanded="false" id="menu-toggle">
       <span id="menu-icon">☰</span>
     </button>
-    <nav id="main-nav" aria-label="メインナビゲーション">
+    <nav id="main-nav" aria-label={navLabel}>
       <ul>
         {nav.map((n) => (
           <li><a href={n.href}>{n.label}</a></li>
         ))}
+        <li><LanguageSwitcher /></li>
       </ul>
     </nav>
   </div>

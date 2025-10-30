@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Documentation — ruuley" canonical="/en/docs/">
+  <section class="hero container">
+    <h1>Documentation</h1>
+    <p>Concepts and approaches of JSON-IR and Validation Gate</p>
+  </section>
+
+  <section class="container">
+    <h2>What is JSON-IR</h2>
+    <div class="card">
+      <p>JSON-IR (JSON Intermediate Representation) is an intermediate representation for structuring laws and regulations and converting them into computable formats.</p>
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Structured</strong>: Represents legal provisions as hierarchical data structures</li>
+        <li><strong>Computable</strong>: Compatible with multiple backends (inference engines, proof assistants, code generation)</li>
+        <li><strong>Traceability</strong>: Maintains correspondence with original text as witness</li>
+        <li><strong>Version Management</strong>: Compatibility management through schema versioning</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Pipeline</h2>
+    <div class="card">
+      <p>A step-by-step process from laws to executable code:</p>
+      <ol>
+        <li><strong>Text Analysis</strong>: Structuring legal text</li>
+        <li><strong>Syntax Parsing</strong>: Conversion to structured representation</li>
+        <li><strong>Normalization</strong>: Conversion to unified format</li>
+        <li><strong>Editing Support</strong>: Editing and trace information assignment</li>
+        <li><strong>Pre-processing</strong>: Shaping for quality improvement</li>
+        <li><strong>Computation Format</strong>: Conversion to machine-processable format</li>
+        <li><strong>Quality Check</strong>: Automated verification and quality assurance</li>
+        <li><strong>Integration</strong>: Integration of multiple documents</li>
+        <li><strong>Code Generation</strong>: Conversion to executable code</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Validation Gate</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Unified Diagnostics</h3>
+        <p>A diagnostic system integrating schema validation, structure checks, and semantic verification. Categorized by error types.</p>
+      </div>
+      <div class="card">
+        <h3>Strict Operations</h3>
+        <p>A mechanism that prevents proceeding to the next step (code generation, integration) until quality is guaranteed. Blocks until all checks pass.</p>
+      </div>
+      <div class="card">
+        <h3>Backend-Specific Policies</h3>
+        <p>Evaluation policies tailored to each backend's characteristics. Issues that block some backends may be warnings or allowed in others.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Pillars of Quality</h2>
+    <div class="card">
+      <p>JSON-IR quality is supported by five pillars:</p>
+      <ul>
+        <li><strong>Provenance</strong>: Recording data sources and transformation history</li>
+        <li><strong>Witness</strong>: Maintaining correspondence between before and after transformation</li>
+        <li><strong>Parity</strong>: Consistency of meaning before and after transformation</li>
+        <li><strong>Reproducibility</strong>: Maintaining compatibility through version management</li>
+        <li><strong>Safety</strong>: Quality assurance through automated verification</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Evaluation Metrics</h2>
+    <div class="card">
+      <p>Validation Gate uses multi-layered evaluation metrics:</p>
+      <ul>
+        <li>Diagnostics across structure, semantics, and traceability</li>
+        <li>Backend-specific compatibility assessment</li>
+        <li>Traceability completeness evaluation</li>
+        <li>Consistency checks during integration</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Support</h2>
+    <div class="card">
+      <p>If you have questions about JSON-IR or Validation Gate, please feel free to contact us:</p>
+      <p><a href="/en/contact" class="button">Contact Us</a></p>
+    </div>
+  </section>
+</BaseLayout>
+

@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
+---
+<BaseLayout title="お問い合わせ — ruuley" canonical="/ja/ja/contact">
+  <section class="container">
+    <h1>お問い合わせ</h1>
+    {new URL(Astro.url).searchParams.get("sent") === "1" && (
+      <div role="alert" aria-live="polite" style="background: #4ade80; color: #001525; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+        送信完了しました。ありがとうございます。
+      </div>
+    )}
+    <form method="POST" action="/api/contact" id="contact-form" novalidate>
+      <label for="name">
+        お名前
+        <input id="name" name="name" type="text" required aria-required="true" autocomplete="name" />
+      </label>
+      <label for="email">
+        メール
+        <input id="email" name="email" type="email" required aria-required="true" autocomplete="email" />
+      </label>
+      <label for="message">
+        内容
+        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+      </label>
+      {siteKey ? (
+        <>
+          <div class="cf-turnstile" data-sitekey={siteKey} data-theme="dark" data-callback="onTurnstileSuccess"></div>
+          <div id="turnstile-status" style="display: none; background: #ef4444; color: white; padding: 8px; border-radius: 4px; margin-top: 8px; font-size: 14px;">
+            Turnstileウィジェットの読み込みに失敗しました。ページを再読み込みしてください。
+          </div>
+        </>
+      ) : (
+        <div style="background: #ef4444; color: white; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+          警告: Turnstile設定が不完全です。サイト管理者に連絡してください。
+        </div>
+      )}
+      <button class="button" type="submit" aria-label="お問い合わせフォームを送信">送信</button>
+    </form>
+  </section>
+  {siteKey && (
+    <script>
+      window.onTurnstileSuccess = function() {
+        const status = document.getElementById("turnstile-status");
+        if (status) status.style.display = "none";
+      };
+      
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const widget = document.querySelector(".cf-turnstile");
+          const tokenInput = document.querySelector("input[name='cf-turnstile-response']");
+          if (widget && !tokenInput) {
+            const status = document.getElementById("turnstile-status");
+            if (status) status.style.display = "block";
+          }
+        }, 3000);
+        
+        const form = document.getElementById("contact-form");
+        if (form) {
+          form.addEventListener("submit", (e) => {
+            const tokenInput = form.querySelector("input[name='cf-turnstile-response']") as HTMLInputElement;
+            if (!tokenInput || !tokenInput.value) {
+              e.preventDefault();
+              alert("Turnstile認証を完了してください。");
+              return false;
+            }
+          });
+        }
+      });
+    </script>
+  )}
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</BaseLayout>
+

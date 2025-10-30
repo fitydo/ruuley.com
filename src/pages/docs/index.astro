@@ -26,15 +26,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <div class="card">
       <p>法令から実行可能なコードまで、段階的に変換するプロセス：</p>
       <ol>
-        <li><strong>Law（法令テキスト）</strong> → CNL（制御自然言語）</li>
-        <li><strong>CNL</strong> → AST（抽象構文木）</li>
-        <li><strong>AST</strong> → SNF（セマンティック正規形）</li>
-        <li><strong>SNF</strong> → Surface+（編集・トレース情報付き）</li>
-        <li><strong>Surface+</strong> → Pre-pass（前処理・整形）</li>
-        <li><strong>Pre-pass</strong> → Core（計算用最終形）</li>
-        <li><strong>Core</strong> → Validation Gate（品質チェック）</li>
-        <li><strong>統合</strong> → Integration Bundle（マルチ記事統合）</li>
-        <li><strong>コード生成</strong> → バックエンド（Soufflé/Z3/Lean/DMN等）</li>
+        <li><strong>テキスト解析</strong>: 法令テキストの構造化</li>
+        <li><strong>構文解析</strong>: 構造的な表現への変換</li>
+        <li><strong>正規化</strong>: 統一された形式への変換</li>
+        <li><strong>編集支援</strong>: 編集とトレース情報の付与</li>
+        <li><strong>前処理</strong>: 品質向上のための整形</li>
+        <li><strong>計算用形式</strong>: 機械処理に適した形式への変換</li>
+        <li><strong>品質チェック</strong>: 自動検証と品質保証</li>
+        <li><strong>統合</strong>: 複数ドキュメントの統合</li>
+        <li><strong>コード生成</strong>: 実行可能なコードへの変換</li>
       </ol>
     </div>
   </section>
@@ -62,11 +62,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <div class="card">
       <p>JSON-IR の品質は以下の5つの柱で支えられています：</p>
       <ul>
-        <li><strong>典拠（Provenance）</strong>: データの出所と変換履歴</li>
-        <li><strong>証跡（Witness）</strong>: Core と Surface+ の対応関係</li>
-        <li><strong>同値性（Parity）</strong>: 変換前後での意味の一貫性</li>
-        <li><strong>再現性（Versioning）</strong>: スキーマバージョンによる互換性管理</li>
-        <li><strong>安全性（CI Gate）</strong>: 自動検証による品質保証</li>
+        <li><strong>典拠</strong>: データの出所と変換履歴の記録</li>
+        <li><strong>証跡</strong>: 変換前後の対応関係の維持</li>
+        <li><strong>同値性</strong>: 変換前後での意味の一貫性</li>
+        <li><strong>再現性</strong>: バージョン管理による互換性の維持</li>
+        <li><strong>安全性</strong>: 自動検証による品質保証</li>
       </ul>
     </div>
   </section>
@@ -74,12 +74,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section class="container">
     <h2>評価指標</h2>
     <div class="card">
-      <p>Validation Gate では、以下のような評価指標を使用します：</p>
+      <p>Validation Gate では、多層的な評価指標を使用します：</p>
       <ul>
-        <li>エラーカテゴリ別の診断（構造、セマンティクス、トレーサビリティ）</li>
+        <li>構造・セマンティクス・トレーサビリティの各側面での診断</li>
         <li>バックエンド別の適合性評価</li>
-        <li>トレーサビリティカバレッジ（witness マップの完全性）</li>
-        <li>統合時の一貫性チェック（語彙・述語の重複・不整合）</li>
+        <li>トレーサビリティの完全性評価</li>
+        <li>統合時の一貫性チェック</li>
       </ul>
     </div>
   </section>

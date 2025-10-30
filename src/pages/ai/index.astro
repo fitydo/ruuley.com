@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <BaseLayout title="AI Copilot (β) — ruuley" canonical="/ai/">
   <section class="hero container">
     <h1>AI Copilot (β)</h1>
-    <p>ゲート指標で自動採点可能なアシスタント。提案は常に Fail-Closed で評価されます。</p>
+    <p>品質保証システムと連携したインテリジェントな編集アシスタント</p>
     <div class="cta">
       <a class="button" href="/contact">デモを予約</a>
       <a class="button secondary" href="#features">機能を見る</a>
@@ -15,54 +15,37 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <h2>主な機能</h2>
     <div class="grid">
       <div class="card">
-        <h3>述語・語彙の提案</h3>
-        <p>アリティ・命名の正規化を提案し、E[preds]/E[closure]を事前に低減。</p>
+        <h3>概念の提案と最適化</h3>
+        <p>編集を支援し、品質指標の改善を目指す提案を行います。</p>
       </div>
       <div class="card">
-        <h3>Surface+ アンカー補完</h3>
-        <p>compose.order や witness マップの不足箇所を自動検出・候補提示。</p>
+        <h3>不足情報の自動補完</h3>
+        <p>必要な情報の不足箇所を検出し、適切な候補を提示します。</p>
       </div>
       <div class="card">
-        <h3>Exact Surface 自動修正</h3>
-        <p>ラウンドトリップ検証と修正案を提示。人間承認後に適用。</p>
+        <h3>自動修正提案</h3>
+        <p>検証結果に基づいて修正案を提示。承認後に適用されます。</p>
       </div>
       <div class="card">
-        <h3>統合時の一貫性チェック</h3>
-        <p>マルチ記事統合時の語彙・述語の重複/不整合を検出・解消案を提示。</p>
+        <h3>一貫性チェック</h3>
+        <p>複数ドキュメント統合時の不整合を検出し、解消案を提示します。</p>
       </div>
     </div>
   </section>
 
   <section class="container">
-    <h2>評価指標</h2>
-    <p>すべての提案は Validation Gate で自動採点されます：</p>
-    <ul style="list-style: none; padding: 0;">
-      <li>✓ E[anchor] / E[id] / E[closure] / E[preds] の削減率</li>
-      <li>✓ E[witness] / E[parity] の改善幅</li>
-      <li>✓ 提案採択率と再ゲート合格率</li>
-      <li>✓ 合格までの編集回数・時間の短縮</li>
-    </ul>
-  </section>
-
-  <section class="container">
-    <h2>安全性</h2>
+    <h2>評価と安全性</h2>
     <div class="card">
-      <h3>Fail-Closed 優先</h3>
-      <p>AIの提案は即座に反映されません。すべての変更は Validation Gate で必ず評価され、BLOCK 条件は緩和されません。</p>
+      <h3>自動評価</h3>
+      <p>すべての提案は品質保証システムで自動的に評価され、品質指標の改善が測定されます。</p>
+    </div>
+    <div class="card">
+      <h3>安全性を重視</h3>
+      <p>AIの提案は即座に反映されません。すべての変更は厳格な品質チェックを通過する必要があります。</p>
     </div>
     <div class="card">
       <h3>監査証跡</h3>
-      <p>すべての編集意思決定は履歴化され、Diff・根拠・承認者情報が記録されます。</p>
-    </div>
-  </section>
-
-  <section class="container">
-    <h2>ベンチマーク</h2>
-    <p>児童手当法第4条のゴールド JSON での評価結果：</p>
-    <div class="card">
-      <p><strong>ゼロエラー達成</strong>：E[anchor]/E[id]/E[closure]/E[preds]/E[witness]/E[parity] = 0</p>
-      <p><strong>witness カバレッジ</strong>：100%</p>
-      <p><strong>パリティ検証</strong>：パス</p>
+      <p>すべての編集意思決定は履歴化され、変更内容と承認情報が記録されます。</p>
     </div>
   </section>
 

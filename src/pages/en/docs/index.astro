@@ -10,14 +10,25 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   <section class="container">
     <h2>What is JSON-IR</h2>
     <div class="card">
-      <p>JSON-IR (JSON Intermediate Representation) is an intermediate representation for structuring laws and regulations and converting them into computable formats.</p>
-      <h3>Key Features</h3>
-      <ul>
-        <li><strong>Structured</strong>: Represents legal provisions as hierarchical data structures</li>
-        <li><strong>Computable</strong>: Compatible with multiple backends (inference engines, proof assistants, code generation)</li>
-        <li><strong>Traceability</strong>: Maintains correspondence with original text as witness</li>
-        <li><strong>Version Management</strong>: Compatibility management through schema versioning</li>
-      </ul>
+      <p class="concept-intro">An intermediate representation for structuring laws and regulations into computable formats</p>
+      <div class="feature-grid-mini">
+        <div class="feature-item">
+          <div class="feature-icon-small">📊</div>
+          <div class="feature-label">Structured</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-small">⚙️</div>
+          <div class="feature-label">Computable</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-small">🔗</div>
+          <div class="feature-label">Traceable</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-small">📌</div>
+          <div class="feature-label">Versioned</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -103,58 +114,202 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       transform: rotate(90deg);
     }
   }
+  .concept-intro {
+    text-align: center;
+    font-size: 18px;
+    color: var(--fg-secondary);
+    margin-bottom: var(--spacing-xl);
+  }
+  .feature-grid-mini {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  .feature-icon-small {
+    font-size: 32px;
+  }
+  .feature-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--fg-secondary);
+  }
+  .icon-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+  }
+  .icon-card-icon {
+    font-size: 24px;
+  }
+  .icon-card h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .icon-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .quality-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+  }
+  .pillar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  .pillar-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover);
+  }
+  .pillar-icon {
+    font-size: 36px;
+  }
+  .pillar-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--fg);
+  }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(93,214,255,.08) 0%, rgba(93,214,255,.03) 100%);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(93,214,255,.2);
+    transition: all 0.3s;
+  }
+  .metric-item:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(93,214,255,.12) 0%, rgba(93,214,255,.05) 100%);
+  }
+  .metric-icon {
+    font-size: 32px;
+  }
+  .metric-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--fg);
+  }
+  .support-card {
+    text-align: center;
+    padding: var(--spacing-2xl);
+  }
+  .support-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+  }
+  .support-card p {
+    margin-bottom: var(--spacing-lg);
+    color: var(--muted);
+  }
 </style>
 
   <section class="container">
     <h2>Validation Gate</h2>
     <div class="grid">
-      <div class="card">
-        <h3>Unified Diagnostics</h3>
-        <p>A diagnostic system integrating schema validation, structure checks, and semantic verification. Categorized by error types.</p>
+      <div class="card icon-card">
+        <div class="icon-card-header">
+          <div class="icon-card-icon">🔍</div>
+          <h3>Unified Diagnostics</h3>
+        </div>
+        <p>Multi-layered quality checks</p>
       </div>
-      <div class="card">
-        <h3>Strict Operations</h3>
-        <p>A mechanism that prevents proceeding to the next step (code generation, integration) until quality is guaranteed. Blocks until all checks pass.</p>
+      <div class="card icon-card">
+        <div class="icon-card-header">
+          <div class="icon-card-icon">🔒</div>
+          <h3>Strict Operations</h3>
+        </div>
+        <p>Blocked until quality assured</p>
       </div>
-      <div class="card">
-        <h3>Backend-Specific Policies</h3>
-        <p>Evaluation policies tailored to each backend's characteristics. Issues that block some backends may be warnings or allowed in others.</p>
+      <div class="card icon-card">
+        <div class="icon-card-header">
+          <div class="icon-card-icon">🎯</div>
+          <h3>Backend-Specific</h3>
+        </div>
+        <p>Tailored evaluation policies</p>
       </div>
     </div>
   </section>
 
   <section class="container">
     <h2>Pillars of Quality</h2>
-    <div class="card">
-      <p>JSON-IR quality is supported by five pillars:</p>
-      <ul>
-        <li><strong>Provenance</strong>: Recording data sources and transformation history</li>
-        <li><strong>Witness</strong>: Maintaining correspondence between before and after transformation</li>
-        <li><strong>Parity</strong>: Consistency of meaning before and after transformation</li>
-        <li><strong>Reproducibility</strong>: Maintaining compatibility through version management</li>
-        <li><strong>Safety</strong>: Quality assurance through automated verification</li>
-      </ul>
+    <div class="quality-pillars">
+      <div class="pillar-item">
+        <div class="pillar-icon">📚</div>
+        <div class="pillar-label">Provenance</div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-icon">🔗</div>
+        <div class="pillar-label">Witness</div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-icon">⚖️</div>
+        <div class="pillar-label">Parity</div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-icon">🔄</div>
+        <div class="pillar-label">Reproducibility</div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-icon">🛡️</div>
+        <div class="pillar-label">Safety</div>
+      </div>
     </div>
   </section>
 
   <section class="container">
     <h2>Evaluation Metrics</h2>
-    <div class="card">
-      <p>Validation Gate uses multi-layered evaluation metrics:</p>
-      <ul>
-        <li>Diagnostics across structure, semantics, and traceability</li>
-        <li>Backend-specific compatibility assessment</li>
-        <li>Traceability completeness evaluation</li>
-        <li>Consistency checks during integration</li>
-      </ul>
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <div class="metric-icon">🏗️</div>
+        <div class="metric-label">Structure</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-icon">🧠</div>
+        <div class="metric-label">Semantics</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-icon">📊</div>
+        <div class="metric-label">Traceability</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-icon">✅</div>
+        <div class="metric-label">Compatibility</div>
+      </div>
     </div>
   </section>
 
   <section class="container">
     <h2>Support</h2>
-    <div class="card">
-      <p>If you have questions about JSON-IR or Validation Gate, please feel free to contact us:</p>
-      <p><a href="/en/contact" class="button">Contact Us</a></p>
+    <div class="card support-card">
+      <div class="support-icon">💬</div>
+      <p>Questions & Inquiries</p>
+      <a href="/en/contact" class="button">Contact Us</a>
     </div>
   </section>
 </BaseLayout>

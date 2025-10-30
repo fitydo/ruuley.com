@@ -11,8 +11,11 @@ const nav = [
 ---
 <header class="site-header">
   <div class="container">
-    <a class="logo" href="/">ruuley</a>
-    <nav>
+    <a class="logo" href="/" aria-label="ruuley ホーム">ruuley</a>
+    <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" id="menu-toggle">
+      <span id="menu-icon">☰</span>
+    </button>
+    <nav id="main-nav" aria-label="メインナビゲーション">
       <ul>
         {nav.map((n) => (
           <li><a href={n.href}>{n.label}</a></li>
@@ -21,3 +24,34 @@ const nav = [
     </nav>
   </div>
 </header>
+<script>
+  (function() {
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('main-nav');
+    const icon = document.getElementById('menu-icon');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        icon.textContent = isOpen ? '✕' : '☰';
+      });
+      // リンククリック時にメニューを閉じる
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          icon.textContent = '☰';
+        });
+      });
+      // ESCキーでメニューを閉じる
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          icon.textContent = '☰';
+          toggle.focus();
+        }
+      });
+    }
+  })();
+</script>

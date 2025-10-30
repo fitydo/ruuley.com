@@ -37,8 +37,9 @@ const cfToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN || "";
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
     <Header />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer />

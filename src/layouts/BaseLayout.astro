@@ -31,7 +31,7 @@ const getAlternateUrls = () => {
     return {
       ja: `${site}/ja/`,
       en: `${site}/en/`,
-      xDefault: `${site}/ja/`
+      xDefault: `${site}/en/`
     };
   }
   
@@ -55,7 +55,7 @@ const getAlternateUrls = () => {
   return {
     ja: `${site}${jaPath}`,
     en: `${site}${enPath}`,
-    xDefault: `${site}${jaPath}`
+    xDefault: `${site}${enPath}`
   };
 };
 const alternates = getAlternateUrls();
@@ -124,6 +124,10 @@ const breadcrumbItems = getBreadcrumbItems();
     <meta property="og:url" content={`${site}${canonical}`} />
     <meta property="og:image" content={`${site}${ogImage}`} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={finalTitle} />
+    <meta name="twitter:description" content={finalDescription} />
+    <meta name="twitter:image" content={`${site}${ogImage}`} />
+    <meta name="twitter:image:alt" content={finalDescription} />
     <meta name="theme-color" content="#0b1220" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {/* hreflang tags for internationalization */}

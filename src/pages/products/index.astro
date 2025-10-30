@@ -2,29 +2,87 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 <BaseLayout title="製品 — ruuley" canonical="/products/">
-  <section class="container">
+  <section class="hero container">
     <h1>製品</h1>
+    <p>JSON-IR の編集から配布までを支える統合ツール群</p>
+  </section>
+
+  <section class="container">
     <div class="grid">
       <div class="card">
         <h3>Validation Gate</h3>
-        <p>統一診断スキーマ、CI 連携、Fail-Closed ポリシー。</p>
+        <p><strong>統一診断と Fail-Closed 運用</strong></p>
+        <ul>
+          <li>統一診断スキーマ（E[anchor]/E[closure]/E[id]/E[witness]/E[parity]）</li>
+          <li>CI 連携と自動ブロック</li>
+          <li>バックエンド別ポリシー評価（gate.json）</li>
+          <li>structured lint.json 出力</li>
+        </ul>
       </div>
       <div class="card">
         <h3>Integration Bundler</h3>
-        <p>複数記事の統合、一貫性検査、監査レポート生成。</p>
+        <p><strong>マルチ記事の統合と監査</strong></p>
+        <ul>
+          <li>複数 Core JSON-IR の自動統合</li>
+          <li>語彙・述語の一貫性検査</li>
+          <li>witness.map のマージと検証</li>
+          <li>監査レポート生成（integration.md）</li>
+        </ul>
       </div>
       <div class="card">
         <h3>VS Code JSON-IR Editor</h3>
-        <p>スキーマ v0.2.27 対応、保存時ゲート、UX 向上。</p>
+        <p><strong>強力な編集体験</strong></p>
+        <ul>
+          <li>スキーマ v0.2.27 完全対応</li>
+          <li>保存時ゲート自動実行</li>
+          <li>Problems マッピングと quick-fix</li>
+          <li>Trace ビューア統合</li>
+        </ul>
       </div>
       <div class="card">
         <h3>Trace & Witness</h3>
-        <p>witness カバレッジとパリティの可視化。</p>
+        <p><strong>トレーサビリティの可視化</strong></p>
+        <ul>
+          <li>witness カバレッジ % 表示</li>
+          <li>Surface+ ↔ Core パリティ検証</li>
+          <li>clause_id ↔ surface_anchor マッピング</li>
+          <li>Deep links とジャンプ機能</li>
+        </ul>
       </div>
       <div class="card">
         <h3>Exact Surface Suite</h3>
-        <p>verify / autofix / AKN フロー。</p>
+        <p><strong>ラウンドトリップ検証</strong></p>
+        <ul>
+          <li>verify: 完全性チェック</li>
+          <li>autofix: 自動修正提案</li>
+          <li>fillFromAKN: AKN からの自動補完</li>
+          <li>needs 解決支援</li>
+        </ul>
       </div>
+      <div class="card">
+        <h3>AI Copilot (β)</h3>
+        <p><strong>ゲート指標で自動採点</strong></p>
+        <ul>
+          <li>述語・語彙の提案</li>
+          <li>アンカー補完と witness マップ生成</li>
+          <li>Fail-Closed で安全に評価</li>
+          <li><a href="/ai/">詳細を見る →</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>統合ワークフロー</h2>
+    <div class="card">
+      <p>これらのツールは連携して、以下のワークフローを実現します：</p>
+      <ol>
+        <li><strong>編集</strong>: VS Code Editor で Core/Surface+ を編集</li>
+        <li><strong>検証</strong>: 保存時に Validation Gate が自動実行</li>
+        <li><strong>統合</strong>: Integration Bundler でマルチ記事を統合</li>
+        <li><strong>監査</strong>: Trace & Witness でトレーサビリティを確認</li>
+        <li><strong>配布</strong>: バックエンドコード生成へ</li>
+      </ol>
     </div>
   </section>
 </BaseLayout>

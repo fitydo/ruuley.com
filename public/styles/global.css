@@ -34,4 +34,8 @@ body {
 h2 { font-size: 28px; margin: 32px 0 16px; }
 h3 { font-size: 20px; margin: 16px 0 8px; }
 section { margin: 48px 0; }
-ul li { margin: 8px 0; }
+ul, ol { padding-left: 24px; }
+ul li, ol li { margin: 8px 0; }
+.card ul, .card ol { margin: 12px 0; }
+.card a { color: var(--accent); text-decoration: none; }
+.card a:hover { text-decoration: underline; }

@@ -44,6 +44,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/ai/" />
   </url>
   <url>
+    <loc>https://ruuley.com/ja/vision/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/vision/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/vision/" />
+  </url>
+  <url>
     <loc>https://ruuley.com/ja/contact</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/contact" />
     <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/contact" />
@@ -83,6 +88,11 @@
     <loc>https://ruuley.com/en/ai/</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/ai/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/ai/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/en/vision/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/vision/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/vision/" />
   </url>
   <url>
     <loc>https://ruuley.com/en/contact</loc>

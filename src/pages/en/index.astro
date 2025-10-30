@@ -3,20 +3,178 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 <BaseLayout title="Making Law Computable — ruuley" canonical="/en/">
   <section class="hero container">
-    <h1>Making Law Computable. Verification and Traceability as Standard Practice.</h1>
-    <p>Automate from editing to distribution with structured intermediate representation and quality assurance systems.</p>
-    <div class="cta">
-      <a class="button" href="/en/products/">View Products</a>
-      <a class="button secondary" href="/en/ai/">AI Copilot (β)</a>
+    <div class="hero-content">
+      <h1>Making Law<br />Computable</h1>
+      <p class="hero-subtitle">Verification and traceability as standard practice</p>
+      <div class="cta">
+        <a class="button" href="/en/products/">Explore Products</a>
+        <a class="button secondary" href="/en/ai/">Try AI Copilot</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-card card-1">
+        <div class="card-icon">✓</div>
+        <span>Quality</span>
+      </div>
+      <div class="floating-card card-2">
+        <div class="card-icon">⟷</div>
+        <span>Trace</span>
+      </div>
+      <div class="floating-card card-3">
+        <div class="card-icon">⚡</div>
+        <span>Automate</span>
+      </div>
     </div>
   </section>
-  <section class="container">
-    <div class="grid">
-      <div class="card"><h3>Quality Assurance System</h3><p>Guarantee quality through unified diagnostics and strict operations.</p></div>
-      <div class="card"><h3>Integration System</h3><p>Consistent integration and auditing of multi-article documents.</p></div>
-      <div class="card"><h3>Editor</h3><p>Automatic validation on save and powerful editing experience.</p></div>
-      <div class="card"><h3>Traceability</h3><p>Visualize evidence trails and consistency.</p></div>
+  
+  <section class="features container">
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Quality Assurance</h3>
+        <p>Unified diagnostics</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <h3>Integration</h3>
+        <p>Multi-document management</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3>Editor</h3>
+        <p>Instant validation</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Traceability</h3>
+        <p>Visual evidence trails</p>
+      </div>
     </div>
   </section>
 </BaseLayout>
+<style>
+  .hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3xl);
+    padding: var(--spacing-3xl) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-content {
+    flex: 1;
+    z-index: 2;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 10vw, 96px);
+    font-weight: 900;
+    line-height: 0.95;
+    margin: 0 0 var(--spacing-lg);
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #ffffff 0%, #e6edf5 30%, #5dd6ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-subtitle {
+    font-size: clamp(20px, 3vw, 28px);
+    color: var(--muted);
+    margin-bottom: var(--spacing-2xl);
+    font-weight: 400;
+  }
+  .hero-visual {
+    flex: 1;
+    position: relative;
+    height: 500px;
+    display: none;
+  }
+  .floating-card {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(93,214,255,.15) 0%, rgba(93,214,255,.05) 100%);
+    border: 1px solid rgba(93,214,255,.2);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-width: 120px;
+    animation: float 6s ease-in-out infinite;
+  }
+  .card-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+  .card-2 {
+    top: 50%;
+    right: 20%;
+    animation-delay: 2s;
+  }
+  .card-3 {
+    bottom: 15%;
+    left: 30%;
+    animation-delay: 4s;
+  }
+  .card-icon {
+    font-size: 32px;
+    color: var(--accent);
+  }
+  .floating-card span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--fg-secondary);
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+  .features {
+    padding: var(--spacing-3xl) 0;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  .feature-card {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: all 0.3s;
+  }
+  .feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    background: linear-gradient(135deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.03) 100%);
+  }
+  .feature-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+    filter: grayscale(0.3);
+    transition: filter 0.3s;
+  }
+  .feature-card:hover .feature-icon {
+    filter: grayscale(0);
+  }
+  .feature-card h3 {
+    font-size: 20px;
+    margin: 0 0 var(--spacing-xs);
+    font-weight: 700;
+  }
+  .feature-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+  }
+  @media (min-width: 1024px) {
+    .hero-visual {
+      display: block;
+    }
+  }
+</style>
 

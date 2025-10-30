@@ -29,6 +29,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/docs/" />
   </url>
   <url>
+    <loc>https://ruuley.com/ja/case-studies/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/case-studies/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/case-studies/" />
+  </url>
+  <url>
     <loc>https://ruuley.com/ja/pricing/</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/pricing/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/pricing/" />
@@ -63,6 +68,11 @@
     <loc>https://ruuley.com/en/docs/</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/docs/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/docs/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/en/case-studies/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/case-studies/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/case-studies/" />
   </url>
   <url>
     <loc>https://ruuley.com/en/pricing/</loc>

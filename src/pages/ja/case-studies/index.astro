@@ -1,0 +1,275 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+<BaseLayout 
+  title="導入事例 — ruuley" 
+  description="IR と Validation Gate による実践的な導入事例。官公庁、企業、出版での成果指標と運用改善を紹介。"
+  canonical="/ja/case-studies/">
+  <section class="hero container">
+    <h1>導入事例</h1>
+    <p>IR と Validation Gate による実践的な成果</p>
+  </section>
+
+  <section class="container">
+    <div class="case-study-grid">
+      <div class="case-study-card">
+        <div class="case-study-header">
+          <div class="case-study-icon">🏛️</div>
+          <h2>官公庁・自治体</h2>
+          <p class="case-study-label">準備中</p>
+        </div>
+        <div class="case-study-content">
+          <h3>成果指標（予測）</h3>
+          <ul class="metrics-list">
+            <li><strong>改正サイクル</strong>: 50%短縮</li>
+            <li><strong>公開準備期間</strong>: 60%削減</li>
+            <li><strong>品質検証時間</strong>: 70%削減</li>
+            <li><strong>トレーサビリティ</strong>: 100%自動化</li>
+          </ul>
+          <h3>運用前後の比較</h3>
+          <div class="comparison">
+            <div class="before">
+              <h4>導入前</h4>
+              <ul>
+                <li>手動検証による遅延</li>
+                <li>改定履歴の追跡困難</li>
+                <li>公開API整備に長期化</li>
+              </ul>
+            </div>
+            <div class="after">
+              <h4>導入後</h4>
+              <ul>
+                <li>自動検証による即時フィードバック</li>
+                <li>完全なトレーサビリティ実現</li>
+                <li>標準化されたAPI自動生成</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="case-study-cta">
+          <a href="/ja/contact" class="button">詳細を問い合わせる</a>
+        </div>
+      </div>
+
+      <div class="case-study-card">
+        <div class="case-study-header">
+          <div class="case-study-icon">🏢</div>
+          <h2>企業コンプライアンス</h2>
+          <p class="case-study-label">準備中</p>
+        </div>
+        <div class="case-study-content">
+          <h3>成果指標（予測）</h3>
+          <ul class="metrics-list">
+            <li><strong>規程違反検知率</strong>: 100%</li>
+            <li><strong>レビュー工数</strong>: 40%削減</li>
+            <li><strong>公開までのTAT</strong>: 50%短縮</li>
+            <li><strong>統合エラー</strong>: 90%削減</li>
+          </ul>
+          <h3>運用前後の比較</h3>
+          <div class="comparison">
+            <div class="before">
+              <h4>導入前</h4>
+              <ul>
+                <li>規程逸脱の見落としリスク</li>
+                <li>手動レビューに時間がかかる</li>
+                <li>複数規程の整合性確認困難</li>
+              </ul>
+            </div>
+            <div class="after">
+              <h4>導入後</h4>
+              <ul>
+                <li>Fail-Closed運用で違反ゼロ</li>
+                <li>自動レビューで工数削減</li>
+                <li>統合バンドルで一貫性保証</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="case-study-cta">
+          <a href="/ja/contact" class="button">詳細を問い合わせる</a>
+        </div>
+      </div>
+
+      <div class="case-study-card">
+        <div class="case-study-header">
+          <div class="case-study-icon">📚</div>
+          <h2>出版・情報発信</h2>
+          <p class="case-study-label">準備中</p>
+        </div>
+        <div class="case-study-content">
+          <h3>成果指標（予測）</h3>
+          <ul class="metrics-list">
+            <li><strong>編集→検証→配信</strong>: 60%短縮</li>
+            <li><strong>多形式出力</strong>: 100%自動化</li>
+            <li><strong>品質チェック</strong>: 80%削減</li>
+            <li><strong>再編集サイクル</strong>: 50%削減</li>
+          </ul>
+          <h3>運用前後の比較</h3>
+          <div class="comparison">
+            <div class="before">
+              <h4>導入前</h4>
+              <ul>
+                <li>手動形式変換に時間がかかる</li>
+                <li>品質チェックが後工程で発覚</li>
+                <li>再編集の繰り返し</li>
+              </ul>
+            </div>
+            <div class="after">
+              <h4>導入後</h4>
+              <ul>
+                <li>編集時の即時検証</li>
+                <li>多形式への自動変換</li>
+                <li>品質ゲートで早期発見</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="case-study-cta">
+          <a href="/ja/contact" class="button">詳細を問い合わせる</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="card cta-section">
+      <h2>β版パイロット参加を募集しています</h2>
+      <p>実際の導入事例を作るため、パイロット参加企業・団体を募集しています。成果指標の測定と改善にご協力いただける方を優先的にご案内します。</p>
+      <a href="/ja/contact" class="button">パイロット参加を申し込む</a>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-2xl);
+    margin: var(--spacing-2xl) 0;
+  }
+  .case-study-card {
+    background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    transition: all 0.3s;
+  }
+  .case-study-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-lg);
+  }
+  .case-study-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border);
+  }
+  .case-study-icon {
+    font-size: 32px;
+  }
+  .case-study-header h2 {
+    flex: 1;
+    margin: 0;
+    font-size: 24px;
+  }
+  .case-study-label {
+    background: rgba(93,214,255,.2);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .case-study-content {
+    margin-bottom: var(--spacing-lg);
+  }
+  .case-study-content h3 {
+    font-size: 18px;
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+    color: var(--accent);
+  }
+  .case-study-content h3:first-child {
+    margin-top: 0;
+  }
+  .metrics-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg);
+  }
+  .metrics-list li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+  .metrics-list li:last-child {
+    border-bottom: none;
+  }
+  .metrics-list strong {
+    color: var(--accent);
+    display: inline-block;
+    min-width: 140px;
+  }
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+  }
+  .before, .after {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+  }
+  .before {
+    background: rgba(239,68,68,.1);
+    border: 1px solid rgba(239,68,68,.2);
+  }
+  .after {
+    background: rgba(74,222,128,.1);
+    border: 1px solid rgba(74,222,128,.2);
+  }
+  .before h4, .after h4 {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .before h4 {
+    color: #ef4444;
+  }
+  .after h4 {
+    color: #4ade80;
+  }
+  .before ul, .after ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+  }
+  .before li, .after li {
+    padding: var(--spacing-xs) 0;
+  }
+  .case-study-cta {
+    text-align: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border);
+  }
+  .cta-section {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    margin-top: var(--spacing-3xl);
+  }
+  .cta-section h2 {
+    margin-bottom: var(--spacing-md);
+  }
+  .cta-section p {
+    color: var(--muted);
+    margin-bottom: var(--spacing-lg);
+  }
+  @media (max-width: 768px) {
+    .comparison {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

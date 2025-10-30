@@ -1,0 +1,275 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+<BaseLayout 
+  title="Case Studies — ruuley" 
+  description="Real-world case studies of IR and Validation Gate implementations. Success metrics and operational improvements in government, enterprise, and publishing."
+  canonical="/en/case-studies/">
+  <section class="hero container">
+    <h1>Case Studies</h1>
+    <p>Real-world results with IR and Validation Gate</p>
+  </section>
+
+  <section class="container">
+    <div class="case-study-grid">
+      <div class="case-study-card">
+        <div class="case-study-header">
+          <div class="case-study-icon">🏛️</div>
+          <h2>Government & Public Sector</h2>
+          <p class="case-study-label">Coming Soon</p>
+        </div>
+        <div class="case-study-content">
+          <h3>Success Metrics (Projected)</h3>
+          <ul class="metrics-list">
+            <li><strong>Amendment Cycle</strong>: 50% reduction</li>
+            <li><strong>Publication Prep</strong>: 60% reduction</li>
+            <li><strong>Quality Verification</strong>: 70% reduction</li>
+            <li><strong>Traceability</strong>: 100% automated</li>
+          </ul>
+          <h3>Before & After</h3>
+          <div class="comparison">
+            <div class="before">
+              <h4>Before</h4>
+              <ul>
+                <li>Delays from manual verification</li>
+                <li>Difficulty tracking revision history</li>
+                <li>Long time-to-market for public APIs</li>
+              </ul>
+            </div>
+            <div class="after">
+              <h4>After</h4>
+              <ul>
+                <li>Instant feedback via automated verification</li>
+                <li>Complete traceability achieved</li>
+                <li>Standardized API auto-generation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="case-study-cta">
+          <a href="/en/contact" class="button">Request Details</a>
+        </div>
+      </div>
+
+      <div class="case-study-card">
+        <div class="case-study-header">
+          <div class="case-study-icon">🏢</div>
+          <h2>Enterprise Compliance</h2>
+          <p class="case-study-label">Coming Soon</p>
+        </div>
+        <div class="case-study-content">
+          <h3>Success Metrics (Projected)</h3>
+          <ul class="metrics-list">
+            <li><strong>Violation Detection</strong>: 100%</li>
+            <li><strong>Review Effort</strong>: 40% reduction</li>
+            <li><strong>Time-to-Publish</strong>: 50% reduction</li>
+            <li><strong>Integration Errors</strong>: 90% reduction</li>
+          </ul>
+          <h3>Before & After</h3>
+          <div class="comparison">
+            <div class="before">
+              <h4>Before</h4>
+              <ul>
+                <li>Risk of missed violations</li>
+                <li>Time-consuming manual reviews</li>
+                <li>Difficulty checking consistency</li>
+              </ul>
+            </div>
+            <div class="after">
+              <h4>After</h4>
+              <ul>
+                <li>Zero violations with fail-closed operations</li>
+                <li>Reduced effort via automated reviews</li>
+                <li>Consistency guaranteed via integration bundles</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="case-study-cta">
+          <a href="/en/contact" class="button">Request Details</a>
+        </div>
+      </div>
+
+      <div class="case-study-card">
+        <div class="case-study-header">
+          <div class="case-study-icon">📚</div>
+          <h2>Publishing & Content</h2>
+          <p class="case-study-label">Coming Soon</p>
+        </div>
+        <div class="case-study-content">
+          <h3>Success Metrics (Projected)</h3>
+          <ul class="metrics-list">
+            <li><strong>Edit→Verify→Publish</strong>: 60% reduction</li>
+            <li><strong>Multi-format Output</strong>: 100% automated</li>
+            <li><strong>Quality Checks</strong>: 80% reduction</li>
+            <li><strong>Revision Cycles</strong>: 50% reduction</li>
+          </ul>
+          <h3>Before & After</h3>
+          <div class="comparison">
+            <div class="before">
+              <h4>Before</h4>
+              <ul>
+                <li>Time-consuming manual format conversion</li>
+                <li>Quality issues discovered late</li>
+                <li>Repeated revision cycles</li>
+              </ul>
+            </div>
+            <div class="after">
+              <h4>After</h4>
+              <ul>
+                <li>Instant verification during editing</li>
+                <li>Automatic multi-format conversion</li>
+                <li>Early detection via quality gates</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="case-study-cta">
+          <a href="/en/contact" class="button">Request Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="card cta-section">
+      <h2>Join Our Beta Pilot Program</h2>
+      <p>We're recruiting pilot participants to build real case studies. Priority access for organizations willing to measure and improve success metrics together.</p>
+      <a href="/en/contact" class="button">Apply for Pilot Program</a>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-2xl);
+    margin: var(--spacing-2xl) 0;
+  }
+  .case-study-card {
+    background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    transition: all 0.3s;
+  }
+  .case-study-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-lg);
+  }
+  .case-study-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border);
+  }
+  .case-study-icon {
+    font-size: 32px;
+  }
+  .case-study-header h2 {
+    flex: 1;
+    margin: 0;
+    font-size: 24px;
+  }
+  .case-study-label {
+    background: rgba(93,214,255,.2);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .case-study-content {
+    margin-bottom: var(--spacing-lg);
+  }
+  .case-study-content h3 {
+    font-size: 18px;
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+    color: var(--accent);
+  }
+  .case-study-content h3:first-child {
+    margin-top: 0;
+  }
+  .metrics-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg);
+  }
+  .metrics-list li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+  .metrics-list li:last-child {
+    border-bottom: none;
+  }
+  .metrics-list strong {
+    color: var(--accent);
+    display: inline-block;
+    min-width: 180px;
+  }
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+  }
+  .before, .after {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+  }
+  .before {
+    background: rgba(239,68,68,.1);
+    border: 1px solid rgba(239,68,68,.2);
+  }
+  .after {
+    background: rgba(74,222,128,.1);
+    border: 1px solid rgba(74,222,128,.2);
+  }
+  .before h4, .after h4 {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .before h4 {
+    color: #ef4444;
+  }
+  .after h4 {
+    color: #4ade80;
+  }
+  .before ul, .after ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+  }
+  .before li, .after li {
+    padding: var(--spacing-xs) 0;
+  }
+  .case-study-cta {
+    text-align: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border);
+  }
+  .cta-section {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    margin-top: var(--spacing-3xl);
+  }
+  .cta-section h2 {
+    margin-bottom: var(--spacing-md);
+  }
+  .cta-section p {
+    color: var(--muted);
+    margin-bottom: var(--spacing-lg);
+  }
+  @media (max-width: 768px) {
+    .comparison {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

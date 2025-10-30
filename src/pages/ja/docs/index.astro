@@ -23,21 +23,87 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
   <section class="container">
     <h2>パイプライン</h2>
-    <div class="card">
-      <p>法令から実行可能なコードまで、段階的に変換するプロセス：</p>
-      <ol>
-        <li><strong>テキスト解析</strong>: 法令テキストの構造化</li>
-        <li><strong>構文解析</strong>: 構造的な表現への変換</li>
-        <li><strong>正規化</strong>: 統一された形式への変換</li>
-        <li><strong>編集支援</strong>: 編集とトレース情報の付与</li>
-        <li><strong>前処理</strong>: 品質向上のための整形</li>
-        <li><strong>計算用形式</strong>: 機械処理に適した形式への変換</li>
-        <li><strong>品質チェック</strong>: 自動検証と品質保証</li>
-        <li><strong>統合</strong>: 複数ドキュメントの統合</li>
-        <li><strong>コード生成</strong>: 実行可能なコードへの変換</li>
-      </ol>
+    <div class="card pipeline-card">
+      <div class="pipeline-visual">
+        <div class="pipeline-step">
+          <div class="step-icon">📄</div>
+          <div class="step-label">法令テキスト</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-icon">🔍</div>
+          <div class="step-label">解析・構造化</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-icon">✨</div>
+          <div class="step-label">編集・検証</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-icon">🔒</div>
+          <div class="step-label">品質チェック</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-icon">⚡</div>
+          <div class="step-label">コード生成</div>
+        </div>
+      </div>
+      <p class="pipeline-description">法令テキストから構造化、編集・検証、品質保証を経て、実行可能なコードまで一貫した変換プロセスを実現します。</p>
     </div>
   </section>
+<style>
+  .pipeline-card {
+    text-align: center;
+  }
+  .pipeline-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(93,214,255,.05) 0%, rgba(93,214,255,.02) 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(93,214,255,.1);
+  }
+  .pipeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-width: 100px;
+  }
+  .step-icon {
+    font-size: 32px;
+    margin-bottom: var(--spacing-xs);
+  }
+  .step-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--fg-secondary);
+  }
+  .pipeline-arrow {
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: 300;
+  }
+  .pipeline-description {
+    margin-top: var(--spacing-lg);
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  @media (max-width: 768px) {
+    .pipeline-visual {
+      flex-direction: column;
+    }
+    .pipeline-arrow {
+      transform: rotate(90deg);
+    }
+  }
+</style>
 
   <section class="container">
     <h2>Validation Gate</h2>

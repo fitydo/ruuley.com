@@ -23,21 +23,87 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
   <section class="container">
     <h2>Pipeline</h2>
-    <div class="card">
-      <p>A step-by-step process from laws to executable code:</p>
-      <ol>
-        <li><strong>Text Analysis</strong>: Structuring legal text</li>
-        <li><strong>Syntax Parsing</strong>: Conversion to structured representation</li>
-        <li><strong>Normalization</strong>: Conversion to unified format</li>
-        <li><strong>Editing Support</strong>: Editing and trace information assignment</li>
-        <li><strong>Pre-processing</strong>: Shaping for quality improvement</li>
-        <li><strong>Computation Format</strong>: Conversion to machine-processable format</li>
-        <li><strong>Quality Check</strong>: Automated verification and quality assurance</li>
-        <li><strong>Integration</strong>: Integration of multiple documents</li>
-        <li><strong>Code Generation</strong>: Conversion to executable code</li>
-      </ol>
+    <div class="card pipeline-card">
+      <div class="pipeline-visual">
+        <div class="pipeline-step">
+          <div class="step-icon">📄</div>
+          <div class="step-label">Legal Text</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-icon">🔍</div>
+          <div class="step-label">Analysis</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-icon">✨</div>
+          <div class="step-label">Edit & Verify</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-icon">🔒</div>
+          <div class="step-label">Quality Check</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-icon">⚡</div>
+          <div class="step-label">Code Generation</div>
+        </div>
+      </div>
+      <p class="pipeline-description">A seamless transformation process from legal text through structuring, editing, verification, and quality assurance to executable code.</p>
     </div>
   </section>
+<style>
+  .pipeline-card {
+    text-align: center;
+  }
+  .pipeline-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(93,214,255,.05) 0%, rgba(93,214,255,.02) 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(93,214,255,.1);
+  }
+  .pipeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-width: 100px;
+  }
+  .step-icon {
+    font-size: 32px;
+    margin-bottom: var(--spacing-xs);
+  }
+  .step-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--fg-secondary);
+  }
+  .pipeline-arrow {
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: 300;
+  }
+  .pipeline-description {
+    margin-top: var(--spacing-lg);
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  @media (max-width: 768px) {
+    .pipeline-visual {
+      flex-direction: column;
+    }
+    .pipeline-arrow {
+      transform: rotate(90deg);
+    }
+  }
+</style>
 
   <section class="container">
     <h2>Validation Gate</h2>

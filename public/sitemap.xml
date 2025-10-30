@@ -1,10 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ruuley.com/</loc></url>
-  <url><loc>https://ruuley.com/products/</loc></url>
-  <url><loc>https://ruuley.com/solutions/</loc></url>
-  <url><loc>https://ruuley.com/docs/</loc></url>
-  <url><loc>https://ruuley.com/pricing/</loc></url>
-  <url><loc>https://ruuley.com/ai/</loc></url>
-  <url><loc>https://ruuley.com/contact</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage -->
+  <url>
+    <loc>https://ruuley.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ruuley.com/ja/" />
+  </url>
+  <!-- Japanese pages -->
+  <url>
+    <loc>https://ruuley.com/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/ja/products/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/products/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/products/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/ja/solutions/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/solutions/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/solutions/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/ja/docs/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/docs/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/docs/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/ja/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/pricing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/pricing/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/ja/ai/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/ai/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/ai/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/ja/contact</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/contact" />
+  </url>
+  <!-- English pages -->
+  <url>
+    <loc>https://ruuley.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/en/products/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/products/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/products/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/en/solutions/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/solutions/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/solutions/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/en/docs/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/docs/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/docs/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/en/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/pricing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/pricing/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/en/ai/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/ai/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/ai/" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/contact" />
+  </url>
 </urlset>

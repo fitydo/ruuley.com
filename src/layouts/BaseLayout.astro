@@ -23,6 +23,42 @@ const defaultDescription = isJa
   : "JSON-IR and Validation Gate for verification and traceability as standard practice";
 const finalTitle = title || defaultTitle;
 const finalDescription = description || defaultDescription;
+
+// Generate alternate language URLs for hreflang
+const getAlternateUrls = () => {
+  // Handle root path
+  if (currentPath === '/') {
+    return {
+      ja: `${site}/ja/`,
+      en: `${site}/en/`,
+      xDefault: `${site}/ja/`
+    };
+  }
+  
+  // Extract base path without language prefix
+  let basePath = currentPath;
+  if (currentPath.startsWith('/ja/')) {
+    basePath = currentPath.replace('/ja', '');
+  } else if (currentPath.startsWith('/en/')) {
+    basePath = currentPath.replace('/en', '');
+  }
+  
+  // Ensure base path starts with /
+  if (!basePath.startsWith('/')) {
+    basePath = '/' + basePath;
+  }
+  
+  // Generate language-specific paths
+  const jaPath = basePath === '/' ? '/ja/' : `/ja${basePath}`;
+  const enPath = basePath === '/' ? '/en/' : `/en${basePath}`;
+  
+  return {
+    ja: `${site}${jaPath}`,
+    en: `${site}${enPath}`,
+    xDefault: `${site}${jaPath}`
+  };
+};
+const alternates = getAlternateUrls();
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -40,6 +76,26 @@ const finalDescription = description || defaultDescription;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#0b1220" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {/* hreflang tags for internationalization */}
+    <link rel="alternate" href={alternates.ja} hreflang="ja" />
+    <link rel="alternate" href={alternates.en} hreflang="en" />
+    <link rel="alternate" href={alternates.xDefault} hreflang="x-default" />
+    {/* Structured Data - Organization (only on homepage) */}
+    {(currentPath === '/' || currentPath === '/ja/' || currentPath === '/en/') && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ruuley",
+        "url": site,
+        "logo": `${site}/favicon.svg`,
+        "sameAs": [],
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "url": `${site}${isJa ? '/ja/contact' : '/en/contact'}`
+        }]
+      })} />
+    )}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />

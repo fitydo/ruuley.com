@@ -2,8 +2,124 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 <BaseLayout title="ドキュメント — ruuley" canonical="/docs/">
-  <section class="container">
+  <section class="hero container">
     <h1>ドキュメント</h1>
-    <p>クイックスタート、CLI、スキーマ、ADR などのリンクを掲載予定。</p>
+    <p>JSON-IR と Validation Gate の完全なドキュメント</p>
+  </section>
+
+  <section class="container">
+    <h2>クイックスタート</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>はじめに</h3>
+        <p>JSON-IR プロジェクトの概要と基本概念</p>
+        <p><a href="https://github.com/fitydo/JSON-IR-family/blob/main/docs/guides/getting_started.md" target="_blank" rel="noreferrer">Getting Started →</a></p>
+      </div>
+      <div class="card">
+        <h3>パイプライン概要</h3>
+        <p>Law → CNL → AST → SNF → Surface+ → Core の流れ</p>
+        <p><a href="https://github.com/fitydo/JSON-IR-family/blob/main/docs/guides/pipeline_overview.md" target="_blank" rel="noreferrer">Pipeline Overview →</a></p>
+      </div>
+      <div class="card">
+        <h3>Validation Gate</h3>
+        <p>オペレーターガイドと設定方法</p>
+        <p><a href="https://github.com/fitydo/JSON-IR-family/blob/main/docs/adr/ADR0042_JSON‑IR‑ValidationGate_Operator_Guide.md" target="_blank" rel="noreferrer">Operator Guide →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>仕様・規約</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>スキーマ</h3>
+        <ul>
+          <li><a href="https://github.com/fitydo/JSON-IR-family/blob/main/docs/specs/Schema_Index.md" target="_blank" rel="noreferrer">Schema Index</a></li>
+          <li><a href="https://github.com/fitydo/JSON-IR-family/tree/main/scripts/JSON-IR-ValidationGate/schemas" target="_blank" rel="noreferrer">スキーマファイル</a></li>
+          <li>Core v0.2.27 / v0.2.28 / v0.2.29</li>
+          <li>SNF v0.1.1 / Surface+ v0.1.0</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>メタデータ仕様</h3>
+        <ul>
+          <li><a href="https://github.com/fitydo/JSON-IR-family/blob/main/docs/specs/JSON-IR_Metadata_Header_Specification.md" target="_blank" rel="noreferrer">Metadata Header</a></li>
+          <li>命名規則とプロファイル</li>
+          <li>語彙・用語集</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>ガバナンス</h3>
+        <ul>
+          <li><a href="https://github.com/fitydo/JSON-IR-family/tree/main/docs/governance" target="_blank" rel="noreferrer">バージョニングポリシー</a></li>
+          <li>移行・非推奨ガイドライン</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>アーキテクチャ決定記録 (ADR)</h2>
+    <div class="card">
+      <p>すべての設計判断は ADR として記録されています：</p>
+      <ul>
+        <li><a href="https://github.com/fitydo/JSON-IR-family/blob/main/docs/adr/ADR_CATALOG.md" target="_blank" rel="noreferrer">ADR Catalog（完全一覧）</a></li>
+        <li>ADR-0036/0037: Core v0.2.27 構造とスキーマ</li>
+        <li>ADR-0040: CI Gates 仕様</li>
+        <li>ADR-0042: Validation Gate オペレーターガイド</li>
+        <li>ADR-0051-0054: 拡張 Validation Gate（keyed predicates, arity, global ID）</li>
+        <li>ADR-0055/0056: スキーマ命名規則と Gate ポリシー</li>
+      </ul>
+      <p><a href="https://github.com/fitydo/JSON-IR-family/tree/main/docs/adr" target="_blank" rel="noreferrer">すべてのADRを見る →</a></p>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>CLI ツール</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Validation Gate</h3>
+        <p><code>bin/jsonir-validate</code></p>
+        <p>統一診断と Fail-Closed 検証</p>
+      </div>
+      <div class="card">
+        <h3>Integration Bundler</h3>
+        <p><code>scripts/integration_bundle.py</code></p>
+        <p>マルチ記事統合と一貫性検査</p>
+      </div>
+      <div class="card">
+        <h3>チェックツール</h3>
+        <ul>
+          <li><code>closure_check.py</code> - 述語クロージャ</li>
+          <li><code>predicates_check.py</code> - 述語アリティ</li>
+          <li><code>anchor_check.py</code> - アンカー検証</li>
+          <li><code>witness_check.py</code> - Witness カバレッジ</li>
+          <li><code>id_check.py</code> - ID 一意性</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>リポジトリ</h2>
+    <div class="card">
+      <p>すべてのドキュメントとソースコードは GitHub で公開されています：</p>
+      <p><a href="https://github.com/fitydo/JSON-IR-family" class="button" target="_blank" rel="noreferrer">JSON-IR-family リポジトリ</a></p>
+      <p style="margin-top: 16px;">ドキュメントルート: <code>docs/</code></p>
+      <ul>
+        <li><code>docs/guides/</code> - ガイドとチュートリアル</li>
+        <li><code>docs/specs/</code> - 正式仕様</li>
+        <li><code>docs/adr/</code> - アーキテクチャ決定記録</li>
+        <li><code>docs/governance/</code> - ガバナンスポリシー</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>サポート</h2>
+    <div class="card">
+      <p>質問や問題がある場合は、お気軽にお問い合わせください：</p>
+      <p><a href="/contact" class="button">お問い合わせ</a></p>
+    </div>
   </section>
 </BaseLayout>

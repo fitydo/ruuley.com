@@ -1,1 +1,3 @@
-https://www.ruuley.com/*  https://ruuley.com/:splat  301
+# www.ruuley.com → ruuley.com のリダイレクトは
+# Cloudflare PagesのCustom domains設定で自動処理されます
+# そのため、_redirectsでの絶対URLリダイレクトは不要です

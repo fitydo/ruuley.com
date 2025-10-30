@@ -5,7 +5,12 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
 <BaseLayout title="お問い合わせ — ruuley" canonical="/contact">
   <section class="container">
     <h1>お問い合わせ</h1>
-    <form method="POST" action="/api/contact">
+    {new URL(Astro.url).searchParams.get("sent") === "1" && (
+      <div style="background: #4ade80; color: #001525; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+        送信完了しました。ありがとうございます。
+      </div>
+    )}
+    <form method="POST" action="/api/contact" id="contact-form">
       <label>
         お名前
         <input name="name" required />
@@ -18,9 +23,32 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
         内容
         <textarea name="message" rows="6" required></textarea>
       </label>
-      <div class="cf-turnstile" data-sitekey={siteKey}></div>
+      {siteKey ? (
+        <div class="cf-turnstile" data-sitekey={siteKey} data-theme="dark"></div>
+      ) : (
+        <div style="background: #ef4444; color: white; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+          警告: Turnstile設定が不完全です。サイト管理者に連絡してください。
+        </div>
+      )}
       <button class="button" type="submit">送信</button>
     </form>
   </section>
+  {siteKey && (
+    <script>
+      window.addEventListener("load", () => {
+        const form = document.getElementById("contact-form");
+        if (form) {
+          form.addEventListener("submit", (e) => {
+            const tokenInput = form.querySelector("input[name='cf-turnstile-response']") as HTMLInputElement;
+            if (!tokenInput || !tokenInput.value) {
+              e.preventDefault();
+              alert("Turnstile認証を完了してください。");
+              return false;
+            }
+          });
+        }
+      });
+    </script>
+  )}
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </BaseLayout>

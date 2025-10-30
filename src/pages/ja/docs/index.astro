@@ -66,6 +66,67 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       </div>
       <p class="pipeline-description">法令テキストから構造化、編集・検証、品質保証を経て、実行可能なコードまで一貫した変換プロセスを実現します。</p>
     </div>
+    
+    <div class="card detailed-pipeline-card">
+      <h3>変換フロー詳細</h3>
+      <div class="detailed-pipeline">
+        <div class="detailed-step">
+          <div class="detailed-step-header">
+            <div class="detailed-step-number">1</div>
+            <div class="detailed-step-title">テキスト解析</div>
+          </div>
+          <div class="detailed-step-content">テキスト構造の抽出</div>
+        </div>
+        <div class="detailed-arrow">↓</div>
+        <div class="detailed-step">
+          <div class="detailed-step-header">
+            <div class="detailed-step-number">2</div>
+            <div class="detailed-step-title">構文解析</div>
+          </div>
+          <div class="detailed-step-content">構造的な表現への変換</div>
+        </div>
+        <div class="detailed-arrow">↓</div>
+        <div class="detailed-step">
+          <div class="detailed-step-header">
+            <div class="detailed-step-number">3</div>
+            <div class="detailed-step-title">正規化</div>
+          </div>
+          <div class="detailed-step-content">統一された形式への変換</div>
+        </div>
+        <div class="detailed-arrow">↓</div>
+        <div class="detailed-step">
+          <div class="detailed-step-header">
+            <div class="detailed-step-number">4</div>
+            <div class="detailed-step-title">IR生成</div>
+          </div>
+          <div class="detailed-step-content">計算可能な中間表現</div>
+        </div>
+        <div class="detailed-arrow">↓</div>
+        <div class="detailed-step">
+          <div class="detailed-step-header">
+            <div class="detailed-step-number">5</div>
+            <div class="detailed-step-title">証跡生成</div>
+          </div>
+          <div class="detailed-step-content">変換前後の対応関係を保持</div>
+        </div>
+        <div class="detailed-arrow">↓</div>
+        <div class="detailed-step">
+          <div class="detailed-step-header">
+            <div class="detailed-step-number">6</div>
+            <div class="detailed-step-title">スキーマ検証</div>
+          </div>
+          <div class="detailed-step-content">品質ゲートによる自動検証</div>
+        </div>
+        <div class="detailed-arrow">↓</div>
+        <div class="detailed-step">
+          <div class="detailed-step-header">
+            <div class="detailed-step-number">7</div>
+            <div class="detailed-step-title">実行コード生成</div>
+          </div>
+          <div class="detailed-step-content">バックエンドへの変換</div>
+        </div>
+      </div>
+    </div>
   </section>
 <style>
   .pipeline-card {
@@ -229,6 +290,75 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   .support-card p {
     margin-bottom: var(--spacing-lg);
     color: var(--muted);
+  }
+  .detailed-pipeline-card {
+    margin-top: var(--spacing-2xl);
+  }
+  .detailed-pipeline-card h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    font-size: 24px;
+  }
+  .detailed-pipeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl);
+  }
+  .detailed-step {
+    width: 100%;
+    max-width: 500px;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(93,214,255,.1) 0%, rgba(93,214,255,.05) 100%);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(93,214,255,.2);
+    transition: all 0.3s;
+  }
+  .detailed-step:hover {
+    transform: translateX(4px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+  }
+  .detailed-step-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+  }
+  .detailed-step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #001525;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .detailed-step-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--fg);
+  }
+  .detailed-step-content {
+    font-size: 14px;
+    color: var(--muted);
+    margin-left: calc(32px + var(--spacing-md));
+  }
+  .detailed-arrow {
+    font-size: 20px;
+    color: var(--accent);
+    font-weight: 300;
+    margin: var(--spacing-xs) 0;
+  }
+  @media (max-width: 768px) {
+    .detailed-step {
+      max-width: 100%;
+    }
   }
 </style>
 

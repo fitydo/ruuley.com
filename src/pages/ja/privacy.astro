@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout 
+  title="プライバシーポリシー — ruuley" 
+  description="ruuleyのプライバシーポリシー。お客様の個人情報の取り扱いについて説明します。"
+  canonical="/ja/privacy">
+  <section class="hero container">
+    <h1>プライバシーポリシー</h1>
+    <p>最終更新日: {new Date().toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+  </section>
+
+  <section class="container">
+    <div class="card">
+      <h2>1. 個人情報の収集</h2>
+      <p>ruuleyは、サービス提供に必要な範囲で個人情報を収集します。収集する情報には、お問い合わせフォームに入力された名前、メールアドレス、お問い合わせ内容が含まれます。</p>
+    </div>
+
+    <div class="card">
+      <h2>2. 個人情報の利用目的</h2>
+      <p>収集した個人情報は、以下の目的で利用します：</p>
+      <ul>
+        <li>お問い合わせへの対応</li>
+        <li>サービス改善のための分析</li>
+        <li>重要なお知らせの配信</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>3. 個人情報の管理</h2>
+      <p>個人情報は適切に管理し、不正アクセス、紛失、破壊、改ざんを防止するための対策を講じます。</p>
+    </div>
+
+    <div class="card">
+      <h2>4. お問い合わせ</h2>
+      <p>プライバシーポリシーに関するご質問は、<a href="/ja/contact">お問い合わせフォーム</a>からご連絡ください。</p>
+    </div>
+  </section>
+</BaseLayout>
+

@@ -142,10 +142,15 @@ const breadcrumbItems = getBreadcrumbItems();
         "name": "ruuley",
         "url": site,
         "logo": `${site}/favicon.svg`,
+        "description": finalDescription,
         "sameAs": [],
         "contactPoint": [{
           "@type": "ContactPoint",
           "contactType": "sales",
+          "url": `${site}${isJa ? '/ja/contact' : '/en/contact'}`
+        }, {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
           "url": `${site}${isJa ? '/ja/contact' : '/en/contact'}`
         }]
       })} />

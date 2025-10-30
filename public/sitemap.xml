@@ -47,6 +47,16 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/contact" />
     <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/contact" />
   </url>
+  <url>
+    <loc>https://ruuley.com/ja/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/privacy" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/ja/terms</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/terms" />
+  </url>
   <!-- English pages -->
   <url>
     <loc>https://ruuley.com/en/</loc>
@@ -93,5 +103,15 @@
     <loc>https://ruuley.com/en/contact</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/contact" />
     <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/contact" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/privacy" />
+  </url>
+  <url>
+    <loc>https://ruuley.com/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ruuley.com/ja/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruuley.com/en/terms" />
   </url>
 </urlset>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout 
+  title="Terms of Service — ruuley" 
+  description="ruuley's terms of service. Please read the terms and conditions for using our service."
+  canonical="/en/terms">
+  <section class="hero container">
+    <h1>Terms of Service</h1>
+    <p>Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+  </section>
+
+  <section class="container">
+    <div class="card">
+      <h2>1. About the Service</h2>
+      <p>ruuley provides tools for converting legal texts into computable formats. This service is a decision support tool and does not provide legal advice.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. Terms of Use</h2>
+      <p>To use this service, you must agree to these terms of service.</p>
+    </div>
+
+    <div class="card">
+      <h2>3. Disclaimer</h2>
+      <p>ruuley shall not be liable for any damages arising from the use of this service. Users shall use this service at their own risk.</p>
+    </div>
+
+    <div class="card">
+      <h2>4. Intellectual Property</h2>
+      <p>All intellectual property rights related to this service belong to ruuley or its licensors.</p>
+    </div>
+
+    <div class="card">
+      <h2>5. Contact</h2>
+      <p>For questions regarding these terms of service, please contact us through our <a href="/en/contact">contact form</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
+

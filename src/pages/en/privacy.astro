@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout 
+  title="Privacy Policy — ruuley" 
+  description="ruuley's privacy policy. We explain how we handle your personal information."
+  canonical="/en/privacy">
+  <section class="hero container">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+  </section>
+
+  <section class="container">
+    <div class="card">
+      <h2>1. Collection of Personal Information</h2>
+      <p>ruuley collects personal information necessary to provide our services. This includes names, email addresses, and inquiry content submitted through our contact form.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. Purpose of Use</h2>
+      <p>Personal information is used for the following purposes:</p>
+      <ul>
+        <li>Responding to inquiries</li>
+        <li>Analyzing data to improve our services</li>
+        <li>Distributing important notices</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>3. Management of Personal Information</h2>
+      <p>We manage personal information appropriately and take measures to prevent unauthorized access, loss, destruction, or alteration.</p>
+    </div>
+
+    <div class="card">
+      <h2>4. Contact</h2>
+      <p>For questions regarding our privacy policy, please contact us through our <a href="/en/contact">contact form</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
+

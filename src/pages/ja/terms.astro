@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout 
+  title="利用規約 — ruuley" 
+  description="ruuleyの利用規約。サービスのご利用にあたっての注意事項を説明します。"
+  canonical="/ja/terms">
+  <section class="hero container">
+    <h1>利用規約</h1>
+    <p>最終更新日: {new Date().toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+  </section>
+
+  <section class="container">
+    <div class="card">
+      <h2>1. サービスについて</h2>
+      <p>ruuleyは、法令を計算可能な形式に変換するためのツールを提供します。本サービスは意思決定支援ツールであり、法的助言を提供するものではありません。</p>
+    </div>
+
+    <div class="card">
+      <h2>2. 利用条件</h2>
+      <p>本サービスをご利用いただくには、本利用規約に同意していただく必要があります。</p>
+    </div>
+
+    <div class="card">
+      <h2>3. 免責事項</h2>
+      <p>本サービスの利用により生じた損害について、ruuleyは一切の責任を負いません。ユーザーは自身の責任において本サービスを利用するものとします。</p>
+    </div>
+
+    <div class="card">
+      <h2>4. 知的財産権</h2>
+      <p>本サービスに関するすべての知的財産権は、ruuleyまたはそのライセンサーに帰属します。</p>
+    </div>
+
+    <div class="card">
+      <h2>5. お問い合わせ</h2>
+      <p>利用規約に関するご質問は、<a href="/ja/contact">お問い合わせフォーム</a>からご連絡ください。</p>
+    </div>
+  </section>
+</BaseLayout>
+

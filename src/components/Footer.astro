@@ -1,9 +1,17 @@
+---
+const currentPath = Astro.url.pathname;
+const isJa = currentPath.startsWith('/ja') || (!currentPath.startsWith('/en') && currentPath !== '/');
+const langPrefix = isJa ? '/ja' : '/en';
+---
 <footer class="site-footer">
   <div class="container">
     <p>© {new Date().getFullYear()} ruuley</p>
     <ul>
-      <li><a href="/sitemap.xml">Sitemap</a></li>
-      <li><a href="/robots.txt">Robots</a></li>
+      <li><a href="/sitemap.xml">{isJa ? "サイトマップ" : "Sitemap"}</a></li>
+      <li><a href="/robots.txt">{isJa ? "Robots" : "Robots"}</a></li>
+      <li><a href={`${langPrefix}/privacy`}>{isJa ? "プライバシー" : "Privacy"}</a></li>
+      <li><a href={`${langPrefix}/terms`}>{isJa ? "利用規約" : "Terms"}</a></li>
     </ul>
+    <p class="legal-notice">{isJa ? "※本サービスは意思決定支援ツールであり、法的助言を提供するものではありません。" : "This service is a decision support tool and does not provide legal advice."}</p>
   </div>
 </footer>

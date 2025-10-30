@@ -9,6 +9,36 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
     <h1>Vision</h1>
     <p class="hero-quote">"Redefining Law. Empowering People. Unifying Civilizations."</p>
     <p class="hero-quote-ja">「法を再定義し、人々をエンパワーし、対立や断絶を越えて一体感を形成する」</p>
+    
+    <div class="tldr-section card">
+      <h2>TL;DR (3 lines)</h2>
+      <ul class="tldr-list">
+        <li>Make laws <strong>computable, verifiable, and transparent</strong>.</li>
+        <li>Give <strong>citizens, policymakers, and enterprises</strong> the same ground truth.</li>
+        <li>Govern with <strong>proofs, traceability, and human oversight</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="personas-section">
+      <h2>Details by Persona</h2>
+      <div class="personas-grid">
+        <a href="#policymakers" class="persona-card card">
+          <div class="persona-icon">🏛️</div>
+          <h3>For Policymakers</h3>
+          <p>Impact simulation, auditability, public APIs</p>
+        </a>
+        <a href="#enterprises" class="persona-card card">
+          <div class="persona-icon">🏢</div>
+          <h3>For Enterprises</h3>
+          <p>Regulations → executable code, violation detection, CI/CD</p>
+        </a>
+        <a href="#developers" class="persona-card card">
+          <div class="persona-icon">👨‍💻</div>
+          <h3>For Developers</h3>
+          <p>IR / OpenAPI / GraphQL / compatibility policies</p>
+        </a>
+      </div>
+    </div>
   </section>
 
   <section class="container">
@@ -22,20 +52,23 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   <section class="container">
     <h2>Vision</h2>
     <div class="vision-grid">
-      <div class="vision-item card">
+      <div class="vision-item card" id="policymakers">
         <div class="vision-item-icon">🌍</div>
         <h3>The Crisis of Representation</h3>
         <p>Today's political and legal systems face a profound crisis of legitimacy and trust. Elites hold power and wealth, while marginalized groups remain unheard, fueling populism and instability worldwide. We must build genuine dialogue between leaders and citizens, rooted in mutual understanding.</p>
+        <p class="vision-connection"><strong>How this shows up in product:</strong> <em>Validation Gate</em> provides structured diagnostics and parity checks; <em>Trace & Witness</em> preserves revision diffs and signed provenance so decisions are auditable end‑to‑end.</p>
       </div>
       <div class="vision-item card">
         <div class="vision-item-icon">🤝</div>
         <h3>Imperfect Leaders, Genuine Efforts</h3>
         <p>Trusted leaders struggle with legal complexities, inevitably making mistakes despite sincere efforts. RuleOS supports both citizens and leaders by making laws transparent, verifiable, and comprehensible.</p>
+        <p class="vision-connection"><strong>How this shows up in product:</strong> <em>Validation Gate</em> provides structured diagnostics and parity checks; <em>Trace & Witness</em> preserves revision diffs and signed provenance so decisions are auditable end‑to‑end.</p>
       </div>
-      <div class="vision-item card">
+      <div class="vision-item card" id="developers">
         <div class="vision-item-icon">🔬</div>
         <h3>Formal Verification: Inspired by Mathematics</h3>
-        <p>Formal verification—a rigorous, computer-based validation—is a trusted method in mathematics. By making laws machine-readable, we verify consistency, simulate policy impacts, and empower citizens with clear insights. Laws should arise from citizens, not be imposed upon them.</p>
+        <p>Formal verification <strong>proves correctness with respect to a specification</strong> and removes <strong>broad classes of implementation defects</strong> in the verified core. By making laws machine-readable, we verify consistency, simulate policy impacts, and empower citizens with clear insights. Laws should arise from citizens, not be imposed upon them.</p>
+        <p class="vision-connection"><strong>How this shows up in product:</strong> <em>Integration Bundler + Verification Suite</em> enables batch inspection, automated fix suggestions, and reproducibility guarantees.</p>
       </div>
       <div class="vision-item card">
         <div class="vision-item-icon">⚖️</div>
@@ -45,7 +78,8 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       <div class="vision-item card">
         <div class="vision-item-icon">🌐</div>
         <h3>Universality Across National Ideologies</h3>
-        <p>RuleOS is designed to be adaptable to the diverse ideologies and systems of different nations. We recognize that every country has its own values, historical background, and policy priorities. However, as long as national leaders are sincerely committed to the well-being of their people, we are confident that this system can be applied universally and beneficially in any country.</p>
+        <p>RuleOS is designed to adapt to diverse legal traditions <strong>while preserving local values and governance</strong>. We recognize that every country has its own values, historical background, and policy priorities.</p>
+        <p class="vision-connection"><strong>How this shows up in product:</strong> IR flexibly adapts to each country's legal systems and terminology, and its backend-agnostic design supports diverse governance styles.</p>
       </div>
       <div class="vision-item card">
         <div class="vision-item-icon">🤖</div>
@@ -56,16 +90,19 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
         <div class="vision-item-icon">🌏</div>
         <h3>Open Source, Fair Distribution, and Global Governance</h3>
         <p>RuleOS will be Open Source Software (OSS), with patented core technologies shared via international patent pools. Commercial users pay licensing fees, partially redistributed to low-income nations. Nonprofits enjoy free access. An independent foundation manages operations, overseen by NGOs, auditors, and international advisory boards.</p>
+        <p class="vision-connection"><strong>Governance model:</strong> The foundation maintains a transparent governance structure, publishing all revision histories and audit reports. The technical advisory board regularly evaluates independence and technical validity, verifiable through published artifacts.</p>
       </div>
-      <div class="vision-item card">
+      <div class="vision-item card" id="enterprises">
         <div class="vision-item-icon">👫</div>
         <h3>Citizen Empowerment and Participatory Governance</h3>
         <p>Citizens can use personal devices to see policy impacts clearly, using their own data, freely providing feedback. Feedback continuously refines the system.</p>
+        <p class="vision-connection"><strong>How this shows up in product:</strong> IR is accessible via APIs, enabling enterprises to analyze regulatory impacts and run simulations. See <a href="/en/docs/">technical details</a>.</p>
       </div>
       <div class="vision-item card">
         <div class="vision-item-icon">🕊️</div>
         <h3>Toward a Just, Unified, and Peaceful Future</h3>
-        <p>We must not compete on the speed of legal amendments between nations. RuleOS is more than technology; it's an operating system for civilization itself. Through transparency, fairness, and active participation, we build a unified, wise, and peaceful society.</p>
+        <p>We must not compete on the speed of legal amendments between nations. RuleOS aims to function as <strong>public‑grade infrastructure for rule‑making</strong>. Through transparency, fairness, and active participation, we build a unified, wise, and peaceful society.</p>
+        <p class="vision-connection"><strong>How this shows up in product:</strong> <em>Validation Gate</em> quality assurance and <em>Trace & Witness</em> evidence management technically support this foundation. See <a href="/en/products/">product details</a>.</p>
       </div>
     </div>
   </section>
@@ -76,7 +113,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       <div class="mission-item">
         <div class="mission-icon">📝</div>
         <h3>Formalize</h3>
-        <p>Translate rules into machine language and guarantee zero bugs through formal verification</p>
+        <p>Translate rules into machine language and <strong>provide formal guarantees (relative to the specification)</strong>, eliminating <strong>whole classes of defects</strong> in the verified core.</p>
       </div>
       <div class="mission-item">
         <div class="mission-icon">🌍</div>
@@ -243,6 +280,80 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
     font-size: 12px;
     color: var(--muted);
     line-height: 1.5;
+  }
+  .tldr-section {
+    margin: var(--spacing-2xl) 0;
+    text-align: left;
+  }
+  .tldr-section h2 {
+    font-size: 24px;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent);
+  }
+  .tldr-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .tldr-list li {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, rgba(93,214,255,.08) 0%, rgba(93,214,255,.03) 100%);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-sm);
+  }
+  .personas-section {
+    margin: var(--spacing-2xl) 0;
+  }
+  .personas-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+  .personas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  .persona-card {
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .persona-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+  }
+  .persona-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+  }
+  .persona-card h3 {
+    color: var(--accent);
+    margin-bottom: var(--spacing-sm);
+  }
+  .persona-card p {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .vision-connection {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--fg-secondary);
+    font-style: italic;
+  }
+  .vision-connection strong {
+    color: var(--accent);
+    font-style: normal;
+  }
+  .vision-connection em {
+    color: var(--fg);
+    font-style: normal;
+  }
+  .vision-connection a {
+    color: var(--accent);
+    text-decoration: underline;
   }
 </style>
 

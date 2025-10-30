@@ -9,6 +9,36 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
     <h1>理念</h1>
     <p class="hero-quote">"Redefining Law. Empowering People. Unifying Civilizations."</p>
     <p class="hero-quote-ja">「法を再定義し、人々をエンパワーし、対立や断絶を越えて一体感を形成する」</p>
+    
+    <div class="tldr-section card">
+      <h2>概要（3行）</h2>
+      <ul class="tldr-list">
+        <li>法令を<strong>機械可読・検証可能・透明</strong>にします。</li>
+        <li><strong>市民・政策当局・企業</strong>が同じ根拠に基づけます。</li>
+        <li><strong>証跡と追跡可能性、そして人間の最終判断</strong>で統治を強化します。</li>
+      </ul>
+    </div>
+
+    <div class="personas-section">
+      <h2>ペルソナ別の詳細</h2>
+      <div class="personas-grid">
+        <a href="#policymakers" class="persona-card card">
+          <div class="persona-icon">🏛️</div>
+          <h3>政策当局者向け</h3>
+          <p>影響シミュレーション・監査性・公開API</p>
+        </a>
+        <a href="#enterprises" class="persona-card card">
+          <div class="persona-icon">🏢</div>
+          <h3>企業向け</h3>
+          <p>規程→実行コード化・違反検知・CI/CD</p>
+        </a>
+        <a href="#developers" class="persona-card card">
+          <div class="persona-icon">👨‍💻</div>
+          <h3>開発者向け</h3>
+          <p>IR / OpenAPI / GraphQL / 互換性方針</p>
+        </a>
+      </div>
+    </div>
   </section>
 
   <section class="container">
@@ -22,20 +52,23 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   <section class="container">
     <h2>ビジョン</h2>
     <div class="vision-grid">
-      <div class="vision-item card">
+      <div class="vision-item card" id="policymakers">
         <div class="vision-item-icon">🌍</div>
         <h3>代表制の危機</h3>
         <p>現代の政治・法制度は、深刻な「正統性」と「信頼」の危機に直面しています。エリートが権力や富を占有し、疎外された層の声は届かず、世界中でポピュリズムや不安定化を生んでいます。リーダーと市民が相互理解に基づく真の対話を築かなければなりません。</p>
+        <p class="vision-connection"><strong>製品での実現:</strong> <em>Validation Gate</em> が監査レポートを生成し、<em>Trace & Witness</em> が改正差分を可視化することで、説明責任を担保します。</p>
       </div>
       <div class="vision-item card">
         <div class="vision-item-icon">🤝</div>
         <h3>不完全なリーダーと誠実な努力</h3>
         <p>信頼のおけるリーダーたちも法制度の複雑さに苦慮し、誠実な努力のなかで過ちを犯します。RuleOSは法を透明で検証可能にし、市民とリーダー双方を支援します。</p>
+        <p class="vision-connection"><strong>製品での実現:</strong> <em>Validation Gate</em> が多層の品質検査と互換性評価を行い、<em>Trace & Witness</em> が改正差分と証跡を保持して<strong>端から端まで監査可能</strong>にします。</p>
       </div>
-      <div class="vision-item card">
+      <div class="vision-item card" id="developers">
         <div class="vision-item-icon">🔬</div>
         <h3>形式的検証：数学に着想を得た検証</h3>
-        <p>コンピュータを使った厳密な検証（形式証明）は数学界で信頼されています。法を機械可読化することで、整合性を確認し、政策の影響をシミュレーションし、市民が明確に影響を理解できます。法は市民から生まれるもので、上から押し付けられるものではありません。</p>
+        <p>形式検証は<strong>仕様に対する正当性</strong>を証明し、検証対象部分における<strong>広範な欠陥クラスの排除</strong>を可能にします。法を機械可読化することで、整合性を確認し、政策の影響をシミュレーションし、市民が明確に影響を理解できます。法は市民から生まれるもので、上から押し付けられるものではありません。</p>
+        <p class="vision-connection"><strong>製品での実現:</strong> <em>Integration Bundler + Verification Suite</em> で一括検査・自動修正提案・再現性の確保を行います。</p>
       </div>
       <div class="vision-item card">
         <div class="vision-item-icon">⚖️</div>
@@ -45,7 +78,8 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       <div class="vision-item card">
         <div class="vision-item-icon">🌐</div>
         <h3>国家イデオロギーを超えた普遍性</h3>
-        <p>RuleOSは、各国の多様なイデオロギーや体制にも適応できるよう設計されています。どの国にも固有の価値観や歴史的背景、政策上の優先課題が存在することを認識しています。しかし、国家の指導者が本当に国民の幸福を願っている限り、RuleOSはどの国でも普遍的に、有効に機能すると確信しています。</p>
+        <p>RuleOSは、各国の多様な法伝統に適応しつつ、<strong>地域の価値とガバナンスを尊重</strong>するよう設計されています。どの国にも固有の価値観や歴史的背景、政策上の優先課題が存在することを認識しています。</p>
+        <p class="vision-connection"><strong>製品での実現:</strong> IR は各国の法体系や用語に柔軟に対応でき、バックエンドに依存しない設計により、多様な統治スタイルをサポートします。</p>
       </div>
       <div class="vision-item card">
         <div class="vision-item-icon">🤖</div>
@@ -56,16 +90,19 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
         <div class="vision-item-icon">🌏</div>
         <h3>オープンソース、公正な分配、国際的ガバナンス</h3>
         <p>RuleOSはOSSとして公開され、特許化された基幹技術も国際パテントプールで共有されます。営利団体は有料ライセンスとなり、収益の一部は低所得国へ再分配されます。非営利利用は無償です。独立財団が運営し、NGO・監査委員会・国際的な技術諮問委員会が監督します。</p>
+        <p class="vision-connection"><strong>運用像:</strong> 財団は透明なガバナンス構造を持ち、すべての改訂履歴と監査報告書を公開します。技術諮問委員会は定期的に独立性と技術的妥当性を評価し、公開アーティファクトで検証可能にします。</p>
       </div>
-      <div class="vision-item card">
+      <div class="vision-item card" id="enterprises">
         <div class="vision-item-icon">👫</div>
         <h3>市民のエンパワメントと参加型統治</h3>
         <p>市民は端末を使って政策の影響を個人データに基づき理解し、自由に意見を伝えます。フィードバックがシステムを絶え間なく改善します。</p>
+        <p class="vision-connection"><strong>製品での実現:</strong> IR は API を通じてアクセス可能で、企業でも規程の影響分析やシミュレーションが可能です。<a href="/ja/docs/">技術詳細</a>を参照してください。</p>
       </div>
       <div class="vision-item card">
         <div class="vision-item-icon">🕊️</div>
         <h3>公正で統合された平和な未来へ</h3>
-        <p>法改正のスピードを国家間で競争することがあってはなりません。RuleOSは単なる技術を超え、文明そのものの基盤といえます。透明性、公正性、積極的な参加を通じ、統合され、賢明で平和な社会を築きます。</p>
+        <p>法改正のスピードを国家間で競争することがあってはなりません。RuleOSは、<strong>ルール策定の公共インフラ</strong>として機能することを目指します。透明性、公正性、積極的な参加を通じ、統合され、賢明で平和な社会を築きます。</p>
+        <p class="vision-connection"><strong>製品での実現:</strong> <em>Validation Gate</em> による品質保証と <em>Trace & Witness</em> による証跡管理が、この基盤を技術的に支えます。<a href="/ja/products/">製品詳細</a>を参照してください。</p>
       </div>
     </div>
   </section>
@@ -76,7 +113,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       <div class="mission-item">
         <div class="mission-icon">📝</div>
         <h3>形式化</h3>
-        <p>ルールを機械語へ転写し、数学的厳密検証でバグゼロを保証</p>
+        <p>ルールを機械語へ転写し、<strong>仕様に対する形式的な正当性保証</strong>を与え、<strong>特定の欠陥クラスを排除</strong>します</p>
       </div>
       <div class="mission-item">
         <div class="mission-icon">🌍</div>
@@ -243,6 +280,80 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
     font-size: 12px;
     color: var(--muted);
     line-height: 1.5;
+  }
+  .tldr-section {
+    margin: var(--spacing-2xl) 0;
+    text-align: left;
+  }
+  .tldr-section h2 {
+    font-size: 24px;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent);
+  }
+  .tldr-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .tldr-list li {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, rgba(93,214,255,.08) 0%, rgba(93,214,255,.03) 100%);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-sm);
+  }
+  .personas-section {
+    margin: var(--spacing-2xl) 0;
+  }
+  .personas-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+  .personas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  .persona-card {
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .persona-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+  }
+  .persona-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+  }
+  .persona-card h3 {
+    color: var(--accent);
+    margin-bottom: var(--spacing-sm);
+  }
+  .persona-card p {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .vision-connection {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--fg-secondary);
+    font-style: italic;
+  }
+  .vision-connection strong {
+    color: var(--accent);
+    font-style: normal;
+  }
+  .vision-connection em {
+    color: var(--fg);
+    font-style: normal;
+  }
+  .vision-connection a {
+    color: var(--accent);
+    text-decoration: underline;
   }
 </style>
 

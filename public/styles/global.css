@@ -31,3 +31,7 @@ body {
 .card { border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 16px; background: rgba(255,255,255,.03); }
 .site-footer { border-top: 1px solid rgba(255,255,255,.06); margin-top: 48px; }
 .site-footer ul { list-style: none; display: flex; gap: 12px; padding: 0; }
+h2 { font-size: 28px; margin: 32px 0 16px; }
+h3 { font-size: 20px; margin: 16px 0 8px; }
+section { margin: 48px 0; }
+ul li { margin: 8px 0; }

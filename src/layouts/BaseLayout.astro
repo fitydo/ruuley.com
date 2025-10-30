@@ -2,8 +2,8 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 const {
-  title = "ruuley — 法律を計算可能にする",
-  description = "JSON-IR と Validation Gate で、検証とトレースが標準の法令運用へ",
+  title,
+  description,
   ogImage = "/og.png",
   canonical = "/",
 } = Astro.props as {
@@ -17,18 +17,24 @@ const cfToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN || "";
 const currentPath = Astro.url.pathname;
 const isJa = currentPath.startsWith('/ja') || (!currentPath.startsWith('/en') && currentPath !== '/');
 const lang = isJa ? 'ja' : 'en';
+const defaultTitle = isJa ? "ruuley — 法律を計算可能にする" : "ruuley — Making Law Computable";
+const defaultDescription = isJa 
+  ? "JSON-IR と Validation Gate で、検証とトレースが標準の法令運用へ"
+  : "JSON-IR and Validation Gate for verification and traceability as standard practice";
+const finalTitle = title || defaultTitle;
+const finalDescription = description || defaultDescription;
 ---
 <!DOCTYPE html>
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
+    <title>{finalTitle}</title>
+    <meta name="description" content={finalDescription} />
     <link rel="canonical" href={`${site}${canonical}`} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={finalTitle} />
+    <meta property="og:description" content={finalDescription} />
     <meta property="og:url" content={`${site}${canonical}`} />
     <meta property="og:image" content={`${site}${ogImage}`} />
     <meta name="twitter:card" content="summary_large_image" />
@@ -40,7 +46,7 @@ const lang = isJa ? 'ja' : 'en';
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
-    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+    <a href="#main-content" class="skip-link">{isJa ? "メインコンテンツへスキップ" : "Skip to main content"}</a>
     <Header />
     <main id="main-content">
       <slot />
